@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form with Tailwind</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .border-green {
+            border-color: #008753; 
+            border-width: 1px;
+        }
+        .focus\:border-green:focus {
+            border-color: #008753;
+        }
+        .input-height {
+            height: 2.75rem; 
+        }
+        .input-padding {
+            padding: 0.75rem; 
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-md">
+        
+        <!-- Logo Placeholder -->
+        <div class="flex justify-center mb-6">
+            <img src="logo-small.png" alt="Logo" class="h-20 w-20 object-contain"> <!-- Replace with your logo -->
+        </div>
+
+        <h2 class="text-2xl font-bold mb-4 text-center">Disaster Relief Form</h2>
+        
+        <form>
+            <!-- ID & Name -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-4">
+                <div>
+                    <label for="id" class="block font-medium text-gray-700">ID</label>
+                    <input type="text" id="id" name="id" class="mt-1 block w-full border-green focus:border-green border rounded-md shadow-sm input-height input-padding">
+                </div>
+                <div>
+                    <label for="name" class="block font-medium text-gray-700">Name</label>
+                    <input type="text" id="name" name="name" class="mt-1 block w-full border-green focus:border-green border rounded-md shadow-sm input-height input-padding">
+                </div>
+            </div>
+
+            <!-- Gender, Age, and Location -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-4">
+                <div>
+                    <label for="gender" class="block font-medium text-gray-700">Gender</label>
+                    <select id="gender" name="gender" class="mt-1 block w-full border-green focus:border-green border rounded-md shadow-sm input-height input-padding">
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="age" class="block font-medium text-gray-700">Age</label>
+                    <input type="number" id="age" name="age" class="mt-1 block w-full border-green focus:border-green border rounded-md shadow-sm input-height input-padding">
+                </div>
+                <div>
+                    <label for="location" class="block font-medium text-gray-700">Location</label>
+                    <input type="text" id="location" name="location" class="mt-1 block w-full border-green focus:border-green border rounded-md shadow-sm input-height input-padding">
+                </div>
+            </div>
+
+            <!-- Coordinates -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-4">
+                <div>
+                    <label for="latitude" class="block font-medium text-gray-700">Latitude</label>
+                    <input type="text" id="latitude" name="latitude" class="mt-1 block w-full border-green focus:border-green border rounded-md shadow-sm input-height input-padding">
+                </div>
+                <div>
+                    <label for="longitude" class="block font-medium text-gray-700">Longitude</label>
+                    <input type="text" id="longitude" name="longitude" class="mt-1 block w-full border-green focus:border-green border rounded-md shadow-sm input-height input-padding">
+                </div>
+            </div>
+
+            <!-- Household, Displaced, Deaths, Injured -->
+            <div class="grid grid-cols-1 sm:grid-cols-4 gap-6 mb-4">
+                <div>
+                    <label for="household" class="block font-medium text-gray-700">No. of People in Household</label>
+                    <input type="number" id="household" name="household" class="mt-1 block w-full border-green focus:border-green border rounded-md shadow-sm input-height input-padding">
+                </div>
+                <div>
+                    <label for="displaced" class="block font-medium text-gray-700">Displaced</label>
+                    <select id="displaced" name="displaced" class="mt-1 block w-full border-green focus:border-green border rounded-md shadow-sm input-height input-padding">
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="deaths" class="block font-medium text-gray-700">No. of Deaths</label>
+                    <input type="number" id="deaths" name="deaths" class="mt-1 block w-full border-green focus:border-green border rounded-md shadow-sm input-height input-padding">
+                </div>
+                <div>
+                    <label for="injured" class="block font-medium text-gray-700">No. of Injured</label>
+                    <input type="number" id="injured" name="injured" class="mt-1 block w-full border-green focus:border-green border rounded-md shadow-sm input-height input-padding">
+                </div>
+            </div>
+
+            <!-- Building Status, Building Type -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-4">
+                <div>
+                    <label for="buildingStatus" class="block font-medium text-gray-700">Building Status</label>
+                    <select id="buildingStatus" name="buildingStatus" class="mt-1 block w-full border-green focus:border-green border rounded-md shadow-sm input-height input-padding">
+                        <option>Partially Damaged</option>
+                        <option>Destroyed</option>
+                        <option>Intact</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="buildingType" class="block font-medium text-gray-700">Building Type</label>
+                    <select id="buildingType" name="buildingType" class="mt-1 block w-full border-green focus:border-green border rounded-md shadow-sm input-height input-padding">
+                        <option>Residential</option>
+                        <option>Commercial</option>
+                        <option>Public</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Access to Shelter, Clean Water, Food, Medical Assistance -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-4">
+                <div>
+                    <label for="shelter" class="block font-medium text-gray-700">Access to Shelter</label>
+                    <select id="shelter" name="shelter" class="mt-1 block w-full border-green focus:border-green border rounded-md shadow-sm input-height input-padding">
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="cleanWater" class="block font-medium text-gray-700">Access to Clean Water</label>
+                    <select id="cleanWater" name="cleanWater" class="mt-1 block w-full border-green focus:border-green border rounded-md shadow-sm input-height input-padding">
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="food" class="block font-medium text-gray-700">Access to Food</label>
+                    <select id="food" name="food" class="mt-1 block w-full border-green focus:border-green border rounded-md shadow-sm input-height input-padding">
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="medicalAssistance" class="block font-medium text-gray-700">Medical Assistance</label>
+                    <select id="medicalAssistance" name="medicalAssistance" class="mt-1 block w-full border-green focus:border-green border rounded-md shadow-sm input-height input-padding">
+                        <option>Needed</option>
+                        <option>Not Needed</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Evacuation Date, Assistance Received -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-4">
+                <div>
+                    <label for="evacuationDate" class="block font-medium text-gray-700">Evacuation Date</label>
+                    <input type="date" id="evacuationDate" name="evacuationDate" class="mt-1 block w-full border-green focus:border-green border rounded-md shadow-sm input-height input-padding">
+                </div>
+                <div>
+                    <label for="assistanceReceived" class="block font-medium text-gray-700">Assistance Received</label>
+                    <select id="assistanceReceived" name="assistanceReceived" class="mt-1 block w-full border-green focus:border-green border rounded-md shadow-sm input-height input-padding">
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Remarks -->
+            <div class="mb-4">
+                <label for="remarks" class="block font-medium text-gray-700">Remarks</label>
+                <textarea id="remarks" name="remarks" rows="4" class="mt-1 block w-full border-green focus:border-green border-2 rounded-md shadow-sm input-padding"></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div>
+                <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded-md">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
